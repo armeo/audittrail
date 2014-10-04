@@ -22,10 +22,15 @@ File {
 # all boxes get the bootstrap
 include bootstrap
 
-node 'es01' {
-  include elasticsearch
+node 'cb01' {
+  include couchbase
 }
 
-node 'cb01', 'cb02' {
+node 'cb02' {
   include couchbase
+  include xdcr
+}
+
+node 'es01' {
+  include elasticsearch
 }
