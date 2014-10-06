@@ -56,7 +56,7 @@ class elasticsearch {
         logoutput => on_failure,
     }->
 
-    exec { "cprofile-real":
+    exec { "create-index-audittrail":
         path    => ['/usr/bin:/bin'],
         command => "sleep 10 && curl -X PUT http://localhost:9200/audittrail",
     }
