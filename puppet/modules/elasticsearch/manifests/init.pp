@@ -46,5 +46,18 @@ class elasticsearch {
     service {'elasticsearch':
         ensure  => running,
         require => Package['elasticsearch']
+    }->
+
+    # Init Index
+    exec { "index-template":
+        path      => ['/usr/bin:/bin'],
+        command   => "sleep 10 && curl -X PUT http://localhost:9200/_template/couchbase -d @/vagrant/puppet/modules/elasticsearch/templates/index_template.json",
+        require   => Service["elasticsearch"],
+        logoutput => on_failure,
+    }->
+
+    exec { "cprofile-real":
+        path    => ['/usr/bin:/bin'],
+        command => "sleep 10 && curl -X PUT http://localhost:9200/audittrail",
     }
 }

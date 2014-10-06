@@ -1,0 +1,62 @@
+{
+    "template" : "*",
+    "order" : 10,
+    "mappings" : {
+        "couchbaseCheckpoint" : {
+            "_source" : {
+                "includes" : ["doc.*"]
+            },
+            "dynamic_templates": [
+                {
+                    "store_no_index": {
+                        "match": "*",
+                        "mapping": {
+                            "store" : "no",
+                            "index" : "no",
+                            "include_in_all" : false
+                        }
+                    }
+                }
+            ]
+        },
+		"audittrail" : {
+		  "_source" : {
+		    "includes" : ["doc.i","doc.d.k","doc.d.v"],
+		    "excludes": ["meta.*"]
+		  },
+		  "_ttl" : { "enabled" : true},
+		  "properties": {
+		    "doc": {
+		      "properties": {
+		        "d": {
+			  "type" : "nested",
+		          "properties": {
+		            "k": {
+		              "type": "string",
+			      "index" : "not_analyzed"
+		            },
+		            "v": {
+		              "type": "string"
+		            }
+		          }
+		        },
+		        "i": {
+		          "type": "string"
+		        }
+		      }
+		    }
+		  }
+		},
+        "_default_" : {
+            "_source" : {
+                "excludes" : ["meta.*"]
+            },
+            "properties" : {
+                "meta" : {
+                    "type" : "object",
+                    "include_in_all" : false
+                }
+            }
+        }
+    }
+}
