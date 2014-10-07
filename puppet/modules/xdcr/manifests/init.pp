@@ -7,7 +7,7 @@ class xdcr {
             -p Couchbase@dm1n \
             --create \
             --xdcr-cluster-name=elasticsearch \
-            --xdcr-hostname=es01.example.com:9091 \
+            --xdcr-hostname=es01.test.com:9091 \
             --xdcr-username=Administrator \
             --xdcr-password=Couchbase@dm1n",
     }->

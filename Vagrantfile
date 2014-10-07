@@ -1,7 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-domain = 'example.com'
+domain = 'test.com'
 box = 'centos65-puppet'
 #box = 'chef/centos-6.5'
 

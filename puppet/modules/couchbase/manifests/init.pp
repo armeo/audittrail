@@ -15,7 +15,6 @@ class couchbase {
 		command => '/usr/bin/wget http://packages.couchbase.com/releases/2.5.1/couchbase-server-enterprise_2.5.1_x86_64.rpm',
 		cwd     => '/opt/',
 		creates => '/opt/couchbase-server-enterprise_2.5.1_x86_64.rpm',
-        timeout => 1800,
 	}->
 
 	# Install Couchbase Server
