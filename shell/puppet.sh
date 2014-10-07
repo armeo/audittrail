@@ -13,3 +13,6 @@ sudo puppet resource cron puppet-apply ensure=present user=root minute=30 comman
 
 echo "packages is up to date"
 sudo yum -y update
+
+echo "install packages for elasticsearch and couchbase"
+sudo yum -y install wget curl unzip pkgconfig openssl098e java-1.7.0-openjdk

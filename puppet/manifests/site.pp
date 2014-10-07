@@ -9,7 +9,7 @@ stage { 'pre':
 
 # add the bootstrap module to the new 'pre' run stage
 class { 'bootstrap':
-  stage => 'pre'
+  stage  => 'pre'
 }
 
 # set defaults for file ownership/permissions
