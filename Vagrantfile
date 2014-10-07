@@ -2,10 +2,13 @@
 # vi: set ft=ruby :
 
 domain = 'example.com'
+box = 'centos65-docker'
+#box = 'chef/centos-6.5'
+
 nodes = [
-	{ :hostname => 'es01', :ip => '11.11.11.11', :box => 'chef/centos-6.5' },
-	{ :hostname => 'cb01', :ip => '22.22.22.22', :box => 'chef/centos-6.5', :ram => '2048' },
-	{ :hostname => 'cb02', :ip => '33.33.33.33', :box => 'chef/centos-6.5', :ram => '2048' },
+	{ :hostname => 'es01', :ip => '11.11.11.11', :box => box },
+	{ :hostname => 'cb01', :ip => '22.22.22.22', :box => box, :ram => '2048' },
+	{ :hostname => 'cb02', :ip => '33.33.33.33', :box => box, :ram => '2048' },
 ]
 
 VAGRANTFILE_API_VERSION = "2"
