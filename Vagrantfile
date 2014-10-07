@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 domain = 'example.com'
-box = 'centos65-docker'
+box = 'centos65-puppet'
 #box = 'chef/centos-6.5'
 
 nodes = [
