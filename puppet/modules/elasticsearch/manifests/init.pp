@@ -8,6 +8,7 @@ class elasticsearch {
         command => '/usr/bin/wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.1.0.noarch.rpm',
         cwd     => '/opt/',
         creates => '/opt/elasticsearch-1.1.0.noarch.rpm',
+        timeout => 1800,
     }->
 
     # Install Elasticsearch

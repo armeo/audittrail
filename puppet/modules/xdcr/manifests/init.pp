@@ -15,7 +15,7 @@ class xdcr {
     #xdcr-replication-mode=capi is important: version2 protocal is not allowed
     exec { "couchbase-xdcr-audittrail":
         path => ['/usr/bin:/bin'],
-        command => "sleep 20 && /opt/couchbase/bin/couchbase-cli xdcr-replicate \
+        command => "sleep 10 && /opt/couchbase/bin/couchbase-cli xdcr-replicate \
             -c localhost:8091 \
             -u Administrator \
             -p Couchbase@dm1n \
@@ -30,11 +30,11 @@ class xdcr {
     # Adding node to cluster and rebalance
     exec { "add-node-cluster":
         path => ['/usr/bin:/bin'],
-        command => "sleep 20 && /opt/couchbase/bin/couchbase-cli rebalance \
+        command => "sleep 10 && /opt/couchbase/bin/couchbase-cli rebalance \
             -c localhost:8091 \
             -u Administrator \
             -p Couchbase@dm1n \
-            --server-add=22.22.22.22:8091 \
+            --server-add=cb01.test.com:8091 \
             --server-add-username=Administrator \
             --server-add-password=Couchbase@dm1n",
     }
