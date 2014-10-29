@@ -2,8 +2,8 @@
 # vi: set ft=ruby :
 
 domain = 'test.com'
-box = 'centos65-puppet'
-#box = 'chef/centos-6.5'
+#box = 'centos65-puppet'
+box = 'chef/centos-6.5'
 
 nodes = [
 	{ :hostname => 'es01', :ip => '11.11.11.11', :box => box },
